@@ -1,0 +1,41 @@
+<html>
+<body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script>
+	function slideAd() {
+	    var $active = $('.AdButton li.active');
+	    var $next = $active.next();
+	    if($active.is(":last-child")){
+	    	$('.AdButton li').removeClass("active").fadeOut(300);
+	    	$('.AdButton li.first').addClass("active").fadeIn(600);
+	    }else {
+		    $active.removeClass('active').fadeOut(300);
+		    $next.addClass('active').fadeIn(600);	
+	    }
+	};
+	function setIntervalX(callback, delay, repetitions) {
+	    var x = 0;
+	    var intervalID = window.setInterval(function () {
+	       callback();
+	       if (++x === repetitions) {
+	           window.clearInterval(intervalID);
+	       }
+	    }, delay);
+	};
+	setIntervalX(function () {
+	    slideAd();
+	}, 5000, 11);
+
+</script>
+
+	<ul class="AdButton" style="list-style: none; width:300px; height: 160px; padding: 0;">
+		<li style="position:absolute; display: block;" class="first active"><a href="http://zoopla.lovemoney.com/?source=1008000" target="_BLANK"><img src="screen1.jpg" alt="Check out the Zoopla.co.uk finance center" width="300" height="160" /></a></li>
+		<li style="position:absolute; display: none;"><a href="http://zoopla.lovemoney.com/?source=1008000" target="_BLANK"><img src="screen2.jpg" alt="Get the right mortgage for you" width="300" height="160" /></a></li>
+		<li style="position:absolute; display: none;"><a href="http://zoopla.lovemoney.com/?source=1008000" target="_BLANK"><img src="screen3.jpg" alt="Do you need a life insurance?" width="300" height="160" /></a></li>
+		<li style="position:absolute; display: none;" class="last"><a href="http://zoopla.lovemoney.com/?source=1008000" target="_BLANK"><img src="screen4.jpg" alt="Credit cards - find a better deal now" width="300" height="160" /></a></li>
+	</ul>
+
+
+</body>
+</html>
